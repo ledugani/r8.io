@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- default meta -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- local style -->
+        <link rel="stylesheet" href="./styles.css">
+
+        <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+        
+        <!-- local js -->
+        <script type='text/javascript' src='./main.js'></script>
+        
+        <!-- etc -->
+        <title>n10.as</title>
+    </head>
+
+    <body>
+        <div id="root">
+            <div class="app__wrap">
+                <div class="main__topbar">
+                    <div class="topbar__topbar">
+                        <header class="topbar__header">
+                            <section class="header__header">
+                                <figure class="header__navigation-figure">
+                                    <img class="header__fig-img" src="./images/botp-1.svg"  alt="chat" />
+                                </figure>
+                            </section>
+                        </header>
+                
+                        <aside class="topbar__sidebar">
+                            <section class="topbar__topleft">
+                                <div class="topbar__audioplayer">
+                                    <figure class="topbar__navigation-figure">
+                                        <img class="topbar__fig-img" src="./images/icons/globespin.gif"  alt="chat" />
+                                    </figure>
+                                </div>
+                                <div class="topbar__nowplaying">
+                                    <!-- <marquee scrollamount="5">
+                                        <p class="nowplaying__p"">
+                                            <b class="nowplaying__b">
+                                                <i class="nowplaying__i">
+                                                    <u class="nowplaying__u">ATTENTION!!! LIMITED TIME ONLY!!! PLAY MY BRAND NEW SINGLE "HAPPY ENDING" BY CLICKING PLAY!!! (THE BIG ORANGE BUTTON)</u>
+                                                </i>
+                                            </b>
+                                        </p>
+                                    </marquee> -->
+                                </div>
+                            </section>
+                            
+                            <section class="topbar__center-right">
+                                
+                            </section>
+                        </aside>
+                    </div>
+                </div>
+
+                <div class="main__content">
+                    <aside class="sidebar__sidebar">
+                        <section class="aside__infopanel">
+                            <div class="infopanel__onair">
+                                <h4 class="infopanel__onair-heading">
+                                    <font size="3" color="#FF0000" face="ARIAL,HELVETICA">On Air</font>
+                                </h4>
+                            </div>
+                            <div class="infopanel__time">
+                                <time id="time"></time>
+                            </div>
+                            <div class="infopanel__stats">
+                                <time class="infopanel__date" id="date"></time>
+                                <!-- TO-DO: make api call to get current weather -->
+                                <p class="infopanel__temp" id="temp">25&deg;C</p>
+                            </div>
+                            <div class="infopanel__citycontainer">
+                                <p class="infopanel__city1 active" onclick="toggleCity1(event)">nsh</p>
+                                <p class="infopanel__city2" onclick="toggleCity2(event)">dfw</p>
+                            </div>
+                        </section>
+                        <section class="aside__navigation-icons">
+                            <!-- <nav>
+                                <ul>
+                                    <li><a href="#">Menu Option 1</a></li>
+                                    <li><a href="#">Menu Option 2</a></li>
+                                </ul>
+                            </nav> -->
+                            <div class="aside__nav-option">
+                                <span class="aside__nav-span" id="aside__navigation-figure-1" onmouseover="changeDef(event)"></span>
+
+                                <figure class="aside__navigation-figure">
+                                    <img width="85" class="aside__fig-img" src="./images/icons/chat-icon_1.png"  alt="chat" />
+                                    <figcaption class="aside__fig-caption" id="fig-caption-1">chat</figcaption>
+                                </figure>
+                            </div>
+                            
+                            <div class="aside__nav-option">
+                                <span class="aside__nav-span" id="aside__navigation-figure-2" onmouseover="changeDef(event)"></span>
+
+                                <figure class="aside__navigation-figure">
+                                    <img width="85" class="aside__fig-img" src="./images/icons/cd-icon_2.png" alt="shows" />
+                                    <figcaption class="aside__fig-caption" id="fig-caption-2">shows</figcaption>
+                                </figure>
+                            </div>
+
+                            <div class="aside__nav-option">
+                                <span class="aside__nav-span" id="aside__navigation-figure-3" onmouseover="changeDef(event)"></span>
+
+                                <figure class="aside__navigation-figure">
+                                    <img width="85" class="aside__fig-img" src="./images/icons/news-icon_1.png" alt="news" />
+                                    <figcaption class="aside__fig-caption" id="fig-caption-3">news</figcaption>
+                                </figure>
+                            </div>
+
+                            <div class="aside__nav-option">
+                                <span class="aside__nav-span" id="aside__navigation-figure-4" onmouseover="changeDef(event)"></span>
+
+                                <figure class="aside__navigation-figure">
+                                    <img width="85" class="aside__fig-img" src="./images/icons/cash-money-icon_1.png" alt="shop" />
+                                    <figcaption class="aside__fig-caption" id="fig-caption-4">shop</figcaption>
+                                </figure>
+                            </div>
+
+                            <div class="aside__nav-option">
+                                <span class="aside__nav-span" id="aside__navigation-figure-5" onmouseover="changeDef(event)"></span>
+
+                                <figure class="aside__navigation-figure">
+                                    <img width="85" class="aside__fig-img" src="./images/icons/gram_2.png" alt="instagram" />
+                                    <figcaption class="aside__fig-caption" id="fig-caption-5">gram</figcaption>
+                                </figure>
+                            </div>
+                        </section>
+                        <section class="aside__socials">
+                            <a class="sidebar__social-link" target="blank" href="https://www.facebook.com/">
+                                <p class="sidebar__social-link-text sidebar__social-link-fb">fb</p>
+                            </a>
+                            
+                            <a class="sidebar__social-link" target="blank" href="https://www.mixcloud.com/n10as/">
+                                <p class="sidebar__social-link-text sidebar__social-link-sc">sc</p>
+                            </a>
+                            
+                            <a class="sidebar__social-link" target="blank" href="https://twitter.com/">
+                                <p class="sidebar__social-link-text sidebar__social-link-tk">tk</p>
+                            </a>
+                        </section>
+                    </aside>
+            
+                    <main class="desktop__desktop">
+                        <div class="desktop__twinkle">
+                            <p class="twinkle__p moving-text">鷲は舞い降りた、自分が死になったことを喜ぶ</p>
+                        </div>
+
+                        <div class="bg__container">
+                            <section>
+                                <article>
+                                    <header>
+                                        <h1>Article #1</h1>
+                                    </header>
+                                    <section>
+                                        This is the first article.
+                                    </section>
+                                </article>
+                                <article>
+                                    <header>
+                                        <h1>Article #2</h1>
+                                    </header>
+                                    <section>
+                                        This is the second article.
+                                    </section>
+                                </article>
+                            </section>
+                        </div>
+
+                        <footer class="footer__footer">
+                            <div class="footer__scroll">
+                                <marquee scrollamount="5">
+                                    <p>
+                                        <b>
+                                            <i>
+                                                <u>ATTENTION!!! LIMITED TIME ONLY!!! PLAY MY BRAND NEW SINGLE "HAPPY ENDING" BY CLICKING PLAY!!! (THE BIG ORANGE BUTTON)</u>
+                                            </i>
+                                        </b>
+                                    </p>
+                                </marquee>
+                            </div>
+                        </footer>
+                    </main>
+                </div>
+                
+                <div class="background__background"></div>
+
+            </div>
+        </div>
+    </body>
+</html>

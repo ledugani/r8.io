@@ -1,0 +1,317 @@
+:root {
+    --custom-red: rgb(255, 51, 51);
+    --custom-purp: rgb(136, 136, 255);
+    --custom-ylw: rgb(255, 255, 51);
+}
+
+body {
+    margin: 0;
+    background-color: #bbbdc0;
+}
+
+.app__wrap {
+    display: grid;
+    grid-template-rows: min(10vh, 110px) 1fr;
+    height: 100vh;
+}
+
+/* ///// */
+/* magic */
+.desktop__twinkle {
+    position: fixed;
+    top: 47%;
+    transform: translateY(-50%);
+}
+
+p.twinkle__p {
+    font-size: 45rem;
+    margin-block: 0;
+    opacity: 0.5;
+    white-space: nowrap;
+
+    width: 100vw;
+}
+
+/* Makes the animation pause on hover */
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* media query to enable animation for only those who want it */
+@media (prefers-reduced-motion: no-preference) {
+    .moving-text {
+        animation: marquee 60s linear infinite;
+    }
+}
+/* //// */
+
+/* main bg */
+.background__background {
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-size: cover;
+}
+
+/* topbar stuff */
+.topbar__topbar {
+    height: calc(min(10vh, 110px) - 8px);
+    box-sizing: initial;
+    border-color: #ececec #d3d3d3;
+    border-style: ridge;
+    border-width: 4px;
+}
+
+.main__topbar,
+.main__content {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: clamp(5rem, 8.5vw + 3px, 10rem) 1fr;
+}
+
+main.desktop__desktop {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url('./images/tile.jpg');
+}
+
+header.topbar__header {
+    position: relative;
+    /* width: calc(8.5vw - 5px); */
+    height: calc(min(10vh, 110px) - 8px);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: #fee032;
+    border-left-color: #d3d3d3;
+    border-bottom-color: #ececec;
+    border-right: 4px ridge #d3d3d3;
+    border-top-color: #ececec;
+}
+
+section.header__header {
+    flex-grow: 1;
+    display: flex;
+}
+
+img.header__fig-img {
+    padding-inline: 0.25rem;
+}
+
+.topbar__nowplaying {
+    background: blue;
+    height: 100%;
+    width: 320px;
+}
+
+p.nowplaying__p {
+    font-size: 1.65rem;
+    font-family: system-ui;
+}
+
+aside.topbar__sidebar {
+    display: flex;
+}
+
+section.topbar__topleft {
+    display: flex;
+}
+
+/* sidebar stuff */
+.sidebar__sidebar {
+    display: flex;
+    flex-direction: column;
+    z-index: 99;
+    border-left: 4px ridge #d3d3d3;
+    border-bottom: 4px ridge #ececec;
+    border-right: 4px ridge #d3d3d3;
+    border-top-color: #ececec;
+}
+
+/* section: infopanel */
+section.aside__infopanel {
+    background: #000;
+    display: grid;
+    gap: 0.25rem;
+}
+
+.infopanel__onair {
+    background: #f0f0f0;
+    border: 3px;
+    border-style: outset;
+    border-color: #808080 #2C2C2C;
+    background: #bbbdc0;
+}
+
+h4.infopanel__onair-heading {
+    margin-block: 0;
+    border: 1px solid black;
+    background: radial-gradient(ellipse, #FFF, #FFFFD8, #FECFAD);
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.infopanel__time,
+.infopanel__stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.infopanel__onair font {
+    letter-spacing: -0.03rem;
+}
+
+div[class^="infopanel__"] :is(time, p) {
+    font-family: 'VT323', monospace;
+}
+
+time#time {
+    color: var(--custom-ylw);
+    font-size: 1.5rem;
+}
+
+time#date,
+p#temp {
+    color: var(--custom-purp);
+    margin-inline: 0.3rem;
+}
+
+p#temp {
+    margin-block: 0;
+}
+
+.infopanel__citycontainer {
+    display: grid;
+    grid-auto-flow: column;
+    text-align: center;
+    border: 2px solid var(--custom-red);
+    cursor: pointer;
+}
+
+p.infopanel__city1,
+p.infopanel__city2 {
+    color: var(--custom-red);
+    font-weight: 800;
+    font-size: 13px;
+    text-align: center;
+    cursor: pointer;
+    margin-block: 0;
+}
+
+p.infopanel__city1.active,
+p.infopanel__city2.active {
+    background-color: var(--custom-red);
+    color: #e0e0e0;
+    /* cursor: default; */
+}
+
+/* side nav */
+section.aside__navigation-icons {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.aside__nav-option {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    border: 3px;
+    border-style: outset;
+    border-color: #ececec #e0e0e0;
+    background: #bbbdc0;
+}
+
+figure.header__navigation-figure,
+figure.aside__navigation-figure {
+    flex-grow: 1;
+    margin-inline: 0;
+    margin-block: 0;
+    display: flex;
+    justify-content: center;
+}
+
+span.header__nav-span,
+span.aside__nav-span {
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+    display: block;
+    position: absolute;
+}
+
+.header__fig-caption,
+.aside__fig-caption {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    display: none;
+    background: yellow;
+    border: 1px solid black;
+    z-index: 9;
+}
+
+.aside__fig-caption,
+.aside__fig-img {
+    pointer-events: none;
+}
+
+/* socials */
+section.aside__socials {
+    display: flex;
+    font-family: 'VT323', monospace;
+}
+
+a.sidebar__social-link {
+    flex-grow: 1;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+p.sidebar__social-link-text {
+    border: 3px;
+    margin-block: 0;
+    padding-block: 0.25rem;
+    border-style: outset;
+}
+
+p.sidebar__social-link-text.sidebar__social-link-fb {
+    border-color: #4c70ba #2d4373;
+    background: #3b5998;
+}
+
+p.sidebar__social-link-text.sidebar__social-link-sc {
+    border-color: #FF9533 #FF5836;
+    background: #FF7700;
+}
+
+p.sidebar__social-link-text.sidebar__social-link-tk {
+    border-color: #1f1f1f #141414;
+    background: #000;
+}
+
+/* //////////////// */
+
+/* main content */
+.footer__scroll {
+    text-align: center;
+    color: white;
+    height: auto;
+    overflow: auto;
+    background-image: url(./images/bluemarble.jpeg);
+    border-style: outset;
+}
