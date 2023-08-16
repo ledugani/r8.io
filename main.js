@@ -64,10 +64,3 @@ function changeDef(e) {
         });
     });
 }
-
-/*-- openweather API --*/
-// url https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid={API key}
-// key d5806769f292d531f2a93d4bdd91c322
-
-/*-- NewsAPI --*/
-// key: 345e160fbd464a9ca72ef0d5ff45a463
