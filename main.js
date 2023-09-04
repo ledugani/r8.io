@@ -79,6 +79,59 @@ function fetchWeather(location) {
 }
 
 function showWeather(resp) {
+    let weatherIcon = resp.weather[0].icon;
+    let weatherImg;
+
+    switch (weatherIcon) {
+        case '01d':
+            weatherImg = 'weather-d_sun.png';
+            break;
+        case '01n':
+            weatherImg = 'weather-n_clear-sky.png';
+            break;
+        case '02d':
+            weatherImg = 'weather-d_few-clouds.png';
+            break;
+        case '02d':
+            weatherImg = 'weather-n_few-clouds.png';
+            break;
+        case '03d':
+        case '03n':
+            weatherImg = 'weather_scattered-clouds.png';
+            break;
+        case '04d':
+        case '04n':
+            weatherImg = 'weather_broken-couds.png';
+            break;
+        case '09d':
+        case '09n':
+            weatherImg = 'weather_shower-rain.png';
+            break;
+        case '10d':
+            weatherImg = 'weather-d_rain.png';
+            break;
+        case '10n':
+            weatherImg = 'weather-n_rain.png';
+            break;
+        case '11d':
+            weatherImg = 'weather-d_thunderstorm.png';
+            break;
+        case '11n':
+            weatherImg = 'weather-n_thunderstorm.png';
+            break;
+        case '13d':
+        case '13n':
+            weatherImg = 'weather_snow.png';
+            break;
+        case '50d':
+        case '50n':
+            weatherImg = 'weather_mist.png';
+            break;
+    }
+
+    let weatherRead = document.querySelector('img#weather');
+    weatherRead.setAttribute("src", `./images/weather/8bit/${weatherImg}`);
+
     let tempRead = document.querySelector('.infopanel__temp');
     tempRead.innerHTML = `<span>${Math.round(resp.main.temp)}&deg;F</span>`;
 }

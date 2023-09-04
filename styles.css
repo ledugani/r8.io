@@ -218,6 +218,16 @@ time#time {
     font-size: 1.5rem;
 }
 
+.infopanel__weather {
+    display: flex;
+    justify-content: center;
+}
+
+img#weather {
+    max-height: 2rem;
+    filter: invert(1);
+}
+
 time#date,
 p#temp {
     color: var(--custom-purp);
