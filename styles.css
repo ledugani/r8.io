@@ -28,7 +28,6 @@ p.twinkle__p {
     margin-block: 0;
     opacity: 0.5;
     white-space: nowrap;
-
     width: 100vw;
 }
 
@@ -64,7 +63,6 @@ p.twinkle__p {
 
 /* topbar stuff */
 .topbar__topbar {
-    /* height: calc(min(10vh, 110px) - 8px); */
     box-sizing: initial;
     border-color: #ececec #d3d3d3;
     border-style: ridge;
@@ -117,8 +115,8 @@ img.header__fig-img {
 
 .topbar__nowplaying {
     background: blue;
-    height: 100%;
-    width: 320px;
+    /* height: 100%; */
+    /* width: 320px; */
 }
 
 p.nowplaying__p {
@@ -126,16 +124,43 @@ p.nowplaying__p {
     font-family: system-ui;
 }
 
+.topbar__scroll {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 aside.topbar__sidebar {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr;
 }
 
 section.topbar__topleft {
+    display: grid;
+    grid-template-columns: calc(min(10vh, 110px) - 8px) 1fr;
+}
+
+.topbar__audioplayer {
     display: flex;
+    height: 100%;
+    text-align: center;
+    background: grey;
 }
 
 figure.topbar__navigation-figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0;
+    width: 100%;
+    border: 3px;
+    border-style: outset;
+    border-color: #ececec silver;
+    background: #bbbdc0;
+}
+
+.play-button {
+    width: 2rem;
 }
 
 /* sidebar stuff */

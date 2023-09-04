@@ -17,7 +17,7 @@
         <script type='text/javascript' src='./main.js'></script>
         
         <!-- etc -->
-        <title>n10.as</title>
+        <title>r8.io</title>
     </head>
 
     <body>
@@ -36,24 +36,30 @@
                         <section class="topbar__topleft">
                             <div class="topbar__audioplayer">
                                 <figure class="topbar__navigation-figure">
-                                    <img class="topbar__fig-img" src="./images/icons/globespin.gif"  alt="chat" />
+                                    <img src="./images/icons/play-button.png" alt="play" class="topbar__icon play-button" />
                                 </figure>
                             </div>
                             <div class="topbar__nowplaying">
-                                <!-- <marquee scrollamount="5">
-                                    <p class="nowplaying__p"">
-                                        <b class="nowplaying__b">
-                                            <i class="nowplaying__i">
-                                                <u class="nowplaying__u">ATTENTION!!! LIMITED TIME ONLY!!! PLAY MY BRAND NEW SINGLE "HAPPY ENDING" BY CLICKING PLAY!!! (THE BIG ORANGE BUTTON)</u>
-                                            </i>
-                                        </b>
-                                    </p>
-                                </marquee> -->
+                                <!-- <p class="topbar__scroll moving-text">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet expedita, optio magnam quos quaerat reiciendis veritatis quis rem placeat nemo ratione. Quaerat, necessitatibus vitae! Aliquam.
+                                </p> -->
                             </div>
                         </section>
                         
                         <section class="topbar__center-right">
-                            
+                            <div class="topbar__archive-schedule">
+                                <div class="archive-schedule__next">
+                                    <img src="" alt="" class="topbar__icon">
+                                </div>
+                                <div class="archive-schedule__btns">
+                                    <!-- <p class="topbar__scroll moving-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione sequi id mollitia labore modi nemo veniam et necessitatibus non commodi, odio dolores quo nam molestiae.</p> -->
+                                </div>
+                            </div>
+                            <div class="topbar__easter-eggs"></div>
+                            <div class="topbar__bg-options">
+
+                            </div>
+                            <div class="topbar__help-btn"></div>
                         </section>
                     </aside>
                 </div>
@@ -72,11 +78,13 @@
                             <div class="infopanel__stats">
                                 <time class="infopanel__date" id="date"></time>
                                 <!-- TO-DO: make api call to get current weather -->
-                                <p class="infopanel__temp" id="temp">25&deg;C</p>
+                                <p class="infopanel__temp" id="temp">
+                                    <span></span>
+                                </p>
                             </div>
                             <div class="infopanel__citycontainer">
-                                <p class="infopanel__city1 active" onclick="toggleCity1(event)">nsh</p>
-                                <p class="infopanel__city2" onclick="toggleCity2(event)">dfw</p>
+                                <p class="infopanel__city1 active" value="Nashville" onclick="toggleCity1(event)">nsh</p>
+                                <p class="infopanel__city2" value="Dallas" onclick="toggleCity2(event)">dfw</p>
                             </div>
                         </section>
                         <section class="aside__navigation-icons">
@@ -147,9 +155,9 @@
                     </aside>
             
                     <main class="desktop__desktop">
-                        <div class="desktop__twinkle">
+                        <!-- <div class="desktop__twinkle">
                             <p class="twinkle__p moving-text">鷲は舞い降りた、自分が死になったことを喜ぶ</p>
-                        </div>
+                        </div> -->
 
                         <div class="bg__container">
                             <section>

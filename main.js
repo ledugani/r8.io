@@ -1,3 +1,6 @@
+/*-- /////////////// --*/
+/*-- infopanel stuff --*/
+
 // update time in real time
 function refreshTime() {
     const timeDisplay = document.getElementById("time");
@@ -23,6 +26,8 @@ setInterval(refreshDate, 1000);
 
 // city toggle
 function toggleCity2(e) {
+    fetchWeather(e.target.getAttribute('value'));
+
     if(e.target.classList.contains('active')) {
         return;
     } else {
@@ -32,6 +37,8 @@ function toggleCity2(e) {
 }
 
 function toggleCity1(e) {
+    fetchWeather(e.target.getAttribute('value'));
+
     if(e.target.classList.contains('active')) {
         return;
     } else {
@@ -39,6 +46,47 @@ function toggleCity1(e) {
         e.target.classList.add('active');
     }
 }
+
+window.onload = function() {
+    fetchWeather('Nashville');
+};
+
+// fetch api key
+function retrieveKeys() {
+    return fetch('./keys.json')
+        .then(response => response.json())
+        .then(data => {
+            // console.log(data[0].key);
+            return data[0].key;
+        }).catch(err => {
+            console.log(err)
+        });
+}
+
+// fetch weather for selected city
+function fetchWeather(location) {
+    retrieveKeys().then(result => {
+        let apiKey = result;
+        let url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=imperial`;
+
+        fetch(url).then(resp => {
+            if(!resp.ok) throw new Error(resp.statusText);
+            return resp.json();
+        }).then((data) => {
+            showWeather(data);
+        }).catch(console.err)
+    });
+}
+
+function showWeather(resp) {
+    let tempRead = document.querySelector('.infopanel__temp');
+    tempRead.innerHTML = `<span>${Math.round(resp.main.temp)}&deg;F</span>`;
+}
+/*-- /////////////// --*/
+
+
+/*-- /////////////// --*/
+/*-- aside nav stuff --*/
 
 // follow mouse on hover
 function changeDef(e) {
@@ -64,3 +112,4 @@ function changeDef(e) {
         });
     });
 }
+/*-- /////////////// --*/
